@@ -56,6 +56,7 @@ gallery.addEventListener('click', e => {
 
 async function loadMore() {
     params.page += 1
+    loadButton.classList.add('visually-hidden');
     const result = await getImages(params.query, params.page);
     const markup = imagesTemplate(result.hits);
     gallery.insertAdjacentHTML('beforeend', markup);
